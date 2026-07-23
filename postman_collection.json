@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "a8f27d42-83b9-4c12-b2d9-183017aef982",
+		"name": "Sharing Vision - Post Article Microservice",
+		"description": "Postman Collection untuk pengujian endpoint Sharing Vision 2023",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Create Article (POST /article/)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Judul Artikel Pengujian Backend Sharing Vision Minimal 20 Karakter\",\n    \"content\": \"Ini adalah konten sampel artikel yang dibuat untuk memenuhi persyaratan minimal 200 karakter. Konten ini berisi penjelasan lengkap mengenai teknologi backend microservice menggunakan Golang, Gin framework, GORM ORM, dan MySQL database.\",\n    \"category\": \"Technology\",\n    \"status\": \"publish\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/article/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get Articles Paginated (GET /article/<limit>/<offset>)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/article/10/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article",
+						"10",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Get Article By ID (GET /article/<id>)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/article/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Update Article By ID (PUT /article/<id>)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Judul Artikel Hasil Pembaruan Terbaru Backend Sharing Vision Minimal 20 Karakter\",\n    \"content\": \"Ini adalah konten artikel yang telah diperbarui. Memenuhi standar validasi minimal 200 karakter. Artikel ini membahas integrasi sistem backend microservice dengan MySQL dan RESTful API di Golang.\",\n    \"category\": \"Tech Updates\",\n    \"status\": \"draft\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/article/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Delete Article By ID (DELETE /article/<id>)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/article/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"article",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
